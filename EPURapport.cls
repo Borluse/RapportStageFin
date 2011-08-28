@@ -44,7 +44,7 @@
 \ifthenelse{\boolean{BUTF8}}{\RequirePackage[utf8]{inputenc}}{}
 
 %----- Initial Class -----
-\LoadClass[11pt,a4paper]{report}
+\LoadClass[12pt,a4paper]{report}
 \RequirePackage[francais]{babel}
 \RequirePackage{url}
 \RequirePackage{xcolor}
@@ -58,7 +58,7 @@
 \setlength{\evensidemargin}{2cm}
 \setlength{\oddsidemargin}{2cm}
 \setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-5.7cm} % 24cm
+\addtolength{\textheight}{-6.7cm} % 24cm
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-4cm} % 17cm
 \setlength{\topmargin}{0.5cm}
@@ -67,6 +67,7 @@
 \setlength{\voffset}{-2.54cm}
 \setlength{\hoffset}{-2.54cm}
 \setlength{\footskip}{1.5cm}
+\linespread{2}
 
 %----- Personnal config -----
 \def\notableofcontents{%
