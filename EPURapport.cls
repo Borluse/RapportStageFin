@@ -67,7 +67,7 @@
 \setlength{\voffset}{-2.54cm}
 \setlength{\hoffset}{-2.54cm}
 \setlength{\footskip}{1.5cm}
-\linespread{2}
+%\linespread{2}
 
 %----- Personnal config -----
 \def\notableofcontents{%
