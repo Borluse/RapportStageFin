@@ -1,4 +1,4 @@
-hn \chapter{Techniques informatiques} % (fold)
+\chapter{Techniques informatiques} % (fold)
 \label{cha:techniques_informatiques}
 
 Dans ce chapitre, je vais parle des outils et des techniques utilisés pendant ce stage. Ces outils contient les outils utilisé dans l'équipe pour le but de mieux communiquer et mieux collaborer. Il y a des outils utilisé pour développement, y compris l'IDE, les outils pour débug et amélioration etc. Sauf-ci, je vais quand même présenter les frameworks, conception utilisé pour ce projet.
@@ -63,11 +63,57 @@ La fonctionnalité de Redmine comporte la liste suivante:
 	\item support de plusieurs bases de données : MySQL, PostgreSQL ou SQLite
 \end{itemize}
 
-Par rapport au Producteev, redmine a des avantages evident. La plus importante est que redmine est gratuit. Il est possible d'installer redmine dans le site web interne d'entreprise. Il a un système de notification mieux que producteev. Redmine supporte beaucoup de personnalisation.
+Par rapport au Producteev, redmine a des avantages evident. La plus importante est que redmine est gratuit. Il est possible d'installer redmine dans le site web interne d'entreprise. Il a un système de notification mieux que producteev. Redmine supporte beaucoup de personnalisation. Il permet de personnalisé les couleur, les interfaces etc. De plus, redmine supporte 30+ de language. 
+
+Pendant ce stage à chugulu, nous avons utilisé beaucoup cet outil pour se communiquer, mettre à jours nos statues. Il est aussi facile pour le chef de projet, pour mon encadrant de reporter les nouvelles issus, de contrôle les progrès des tâches assigné à chaque développeur. L'interface de redmine est beaucoup mieux par rapport à l'interface de producteev. Sur redmine, nous pouvons mettre à jours nos tâches et nos statues simplement par cliquer à droit sur la souris. 
+
+Un autre avantage important est qu'il peut être installé à interne de l'entreprise. C'est beaucoup mieux par rapport à un site web comme Producteev. Non seulement la niveau de sécurité, mais aussi que on peut maintenir nous même. Si un jour, Producteev est disparu, nous allons perdre tous nos informations.
 
 % subsubsection redmine (end)
 
 % subsubsection producteev_et_redmine (end)
+
+\subsection{Git \& Github} % (fold)
+
+\subsubsection{Git} % (fold)
+
+% TODO add git
+
+Git est un logiciel de gestion de versions décentralisée. C'est un logiciel libre créé par Linus Torvalds, le créateur du noyau Linux, et distribué sous la GNU GPL version 2. Il est crée par Linus Torvalds, qui est aussi le créateur de Linux. Git ne repose pas sur un serveur centralisé. C'est un outil bas niveau, qui se veut simple et très performant, dont la principale tâche est de gérer l'évolution du contenu d'une arborescence. Chaque répertoire git contient une base des données local, y contient toutes les fichiers, les commits, les traces, les branches etc. Il est encore un avantage par rapport aux autre logiciel version contrôle comme SVN, c'est que git nous permet de choisi un ou plusieurs fichier. 
+
+Git possède deux structures de données : une base d'objets et un cache de répertoires. Il existe quatre types d'objets :
+
+\begin{itemize}
+	\item l'objet blob, qui représente le contenu d'un fichier (l'origine de cette dénomination est probablement à chercher dans les Binary Large OBjects des bases de données).
+	\item l'objet tree ("arbre" en anglais), qui est une liste d'objets de type blobs et des informations associées à chaque blob, tel que le nom du fichier et les permissions. Cet objet décrit l'arborescence des sources à un temps donné.
+	\item l'objet commit, qui donne accès à l'historique d'une arborescence de source. Il contient un message de log, un objet arbre et pointe vers un ou plusieurs objets commit parents.
+	\item l'objet tag qui est une manière de représenter un commit spécifique. Il est en général utilisé pour marquer certains commits, par exemple par un numéro ou un nom de version (2.1 ou bien Hardy Heron).
+\end{itemize}
+
+La base des objets peut contenir n'importe quel type d'objets. Une couche intermédiaire, utilisant des index (les sommes de contrôle), établit un lien entre les objets de la base et l'arborescence des fichiers.
+Chaque objet est identifié par une somme de contrôle SHA-1 de son contenu. Git calcule la somme de contrôle et utilise cette valeur pour déterminer le nom de fichier de l'objet. L'objet est placé dans un répertoire dont le nom correspond aux deux premières lettres de la somme de contrôle. Le reste de la somme de contrôle constitue alors le nom du fichier pour cet objet.
+
+Git enregistre chaque révision dans un fichier en tant qu'objet blob unique. Les relations entre les objets blobs sont déterminées en examinant les objets commit. En général, les objets blobs sont stockés dans leur intégralité en utilisant la compression de la zlib. Ce principe peut rapidement consommer une grande quantité de place disque ; de ce fait, les objets peuvent être combinés dans des archives, qui utilisent la compression différentielle (c'est-à-dire que les blobs sont enregistrés sous la forme de différences par rapport aux autres blobs).
+% subsubsection Git (end)
+
+\subsubsection{Github} % (fold)
+
+% TODO add logo github
+
+GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le programme Git. Ce site est développé en Ruby on Rails. GitHub propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets open source. Il est le meilleur site web du monde pour utiliser git. Github supporte la collaboration. Il supporte le fonction de folk. Nous pouvons faire une copie de n'importe quel projet qui nous intéresse. Github supporte plusieurs type de management. Par défaut, nous pouvons avoir une répertoire gratuits, mais tous nos fichiers sont publié. Github fournit quelque options pour les utilisateurs d'entreprise. Par exemple, nous pouvons payer 7 dollar par mois, et obtenons 5 repositoir avec 1 collaborateur, qui peut avoir 0.6GB d'espace. 
+
+Github travaille mieux par rapport aux serveur de svn chez Chugulu Game. Chugulu games a commencé à utiliser git & github cet été. Il devient mieux par rapport avant.
+% subsubsection Github (end)
+
+% subsection Git \& Github (end)
+
+\subsection{XMind} % (fold)
+
+% TODO add logo XMind.
+
+XMind est un outil très pratique. Chugulu game utilise cet outil beaucoup pour organiser les idées, présenter les schémas. 
+
+% subsection XMind (end)
 
 % section outils_de_collaboration (end)
 
