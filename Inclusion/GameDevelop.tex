@@ -186,9 +186,100 @@ Un jeu est un logiciel différente. Non seulement son fonctionnalité, son but, 
 \subsection{Le structure général d'un jeu} % (fold)
 \label{sub:le_structure_général_d_un_jeu}
 
-Un jeu peut souvent bouger lui même sans l'activité des joueurs. C-à-d que, quand tu ne donne pas tes instructions, tes commands, le jeu peut bouger quand même. Il peut afficher une animation, il y a des objets qui bougent, le temps passé, des <<Civils>> se chats etc.. C'est parce que un jeu est dans quelque niveau un simulation d'un environnement. Un jeu toujours essaie de simuler un environnement vivant. Dedans, les joueurs peuvent avoir une impression que ils sont une membre qui appartient au environnement. Et ils peuvent avoir envie de interagir avec les objets, avec l'environnement, même si cet environnement n'est pas vrai. Tout cela est un facteur hyper importante pour un jeu qui veut être réussit
+Un jeu peut souvent bouger lui même sans l'activité des joueurs. C-à-d que, quand tu ne donne pas tes instructions, tes commands, le jeu peut bouger quand même. Il peut afficher une animation, il y a des objets qui bougent, le temps passé, des <<Civils>> se chats etc.. C'est parce que un jeu est dans quelque niveau un simulation d'un environnement. Un jeu toujours essaie de simuler un environnement vivant. Dedans, les joueurs peuvent avoir une impression que ils sont une membre qui appartient au environnement. Et ils peuvent avoir envie de interagir avec les objets, avec l'environnement, même si cet environnement n'est pas vrai. Tout cela est un facteur hyper importante pour un jeu qui veut être réussit.
+
+% TODO add the schema game loop 
+
+À partir de ce schéma <<Game loop>>, nous pouvons savoir, il y a 3 étape générale dans un game loop. Souvent, un jeu commence par étape <<Initialisation>>. Dans cette étape, le joueur va choisir les options, mode à jouer, etc. Une fois, le joueur clique sur <<Jouer>>, notre game loop commence à rouler. Souvent, un game loop commence par attendre l'input du joueur. Si un joueur n'input pas, game loop va aller dans l'étape 2, qui s'appelle <<Simuler game world>>. Dans cette étape, le jeu va essayer de simuler l'environnement du jeu par rapport aux inputs du joueurs. Ce simulations dépends sur les règles que nous avons donner. Précisément dire, nous pouvons avoir des règles comme <<Intellegent Artificiel>>, <<Collision detect>> etc.. Après cette étape, nous obtenons les résultats et l'environnement prêt à dessiner. C'est le moment où on dessiner les environnements dans l'écran devant le joueur.
+
+Je vais parler des étapes :
+
+\subsubsection{Game Loop} % (fold)
+\label{ssub:game_loop}
+
+Le gameplay sera exécuté dans une boucle. Les principaux composants de cette boucle sera Update et Draw. La boucle sera nécessaire pour faire fonctionner soixante fois par seconde.
+
+\subsubsection{Draw} % (fold)
+\label{ssub:draw}
+Draw sera responsable pour le dessin à l'écran en fonction de variables d'état différents. La vue sera tributaire de la position du joueur, l'orientation et la vitesse. Options de la caméra de l'utilisateur sera également affecter la vue. Il y aura un appel Draw pour chaque appel Update.
+% subsubsection draw (end)
+
+\subsubsection{Simuler de l'environnements/mise à jour} % (fold)
+\label{ssub:subsubsection_name}
+
+Simuler de l'environnements sera responsable de tous les changements d'état de jeu n'est pas liée à dessin. Il s'agira notamment AI, entrée, détection de collision, de mouvements d'objets (physique), réseau et audio.
+
+
+% subsubsection game_loop (end)
+
+\subsubsection{Intelligent Artificiel } % (fold)
+\label{ssub:a_i_décisions_}
+Durant cette phase de la mise à jour, A.I. prend les décisions sur l'endroit où aller, comment dépenser les crédits pour moderniser leurs navires, ce qui à feu à et quelle arme à utiliser. 
+
+Les décisions ne peuvent être faites lors de chaque appel de Update. A.I. mises à jour peut être reporté à améliorer les performances.
+
+% subsubsection a_i_décisions_ (end)
+
+\subsubsection{Manipulation d'entrée} % (fold)
+\label{ssub:manipulation_d_entrée}
+
+Durant cette phase de la mise à jour, toutes les informations de l'utilisateur seront analysées et traitées. Toutes les commandes validés seront exécutées immédiatement. Toutes les commandes invalides retour à l'utilisateur ou tout simplement être jetés hors basé sur la commande et de la situation. 
+
+Manipulation d'entrée sera fait à chaque cycle  pour s'assurer que le jeu semble réceptif à tout moment.
+
+% subsubsection manipulation_d_entrée (end)
+
+\subsubsection{Détection de collision} % (fold)
+\label{ssub:détection_de_collision}
+
+Durant cette phase de la mise à jour, tous les objets va vérifier si elles entrent en collision avec d'autres objets. Partitionnement spatial sera utilisé pour améliorer les performances de ces contrôles. Si une collision se produit, le système de détection de collision va coopérer avec le système physique pour déterminer les forces appropriées à appliquer à chaque objet. Dommage, les crédits et appropriée des effets graphiques peuvent également avoir besoin d'être appliquée. 
+
+Détection de collision se produira à chaque cycle.
+
+% subsubsection détection_de_collision (end)
+
+\subsubsection{Physique} % (fold)
+\label{ssub:physique}
+
+Durant cette phase de la mise à jour, tous les objets seront déplacés en fonction de leurs mouvements et de composants vitesse de rotation. Le mouvement et les composantes de vitesse de rotation sera également mis à jour pour refléter toutes les forces appliquées à l'objet. 
+
+Physique sera effectué à chaque cycle.
+
+% subsubsection physique (end)
+
+\subsubsection{Réseaux} % (fold)
+\label{ssub:réseau}
+
+Durant cette phase de la mise à jour, toutes les fonctions de réseaux seront traitées. Le but de la mise en réseau sera de synchroniser les «univers». Il s'agira notamment de l'envoi de toutes les données sur le vaisseau du joueur et les projectiles, ainsi que de recevoir les mêmes données à d'autres joueurs. 
+
+Réseaux ne se fera pas à chaque cycle jour. Réseaux sera reporté au besoin, pour améliorer les performances. Réseaux ne sera pas présent dans les jeux solo.
+
+% subsubsection réseau (end)
+
+\subsubsection{Sonore} % (fold)
+\label{ssub:sonore}
+
+Sonore sera spéciale que des autres phases du cycle de mise à jour. Il ne sera pas traitée dans la boucle de mise à jour, seulement instancié. La méthode mise à jour sera responsable de décider quand les sons doivent être joués en fonction des événements dans le jeu. Toutes les sons réels seront traitées par les threads qui fonctionnent en parallèle de la mise à jour boucle. Sonore sera divisée en deux catégories, la musique et effets sonores
+
+% subsubsection sonore (end)
 
 % subsection le_structure_général_d_un_jeu (end)
+
+\subsection{Le structure de <<Playboy-Spots>>} % (fold)
+\label{sub:le_structure_de_playboy_spots_}
+
+<<Playboy-Spots>> est un jeu un peu spécial. En fait, nous pouvons également considérer que <<Playboy-Spots>> est une application. La différence la plus évident par rapport aux autre jeux est que, il n'y pas beaucoup des animation, ni des environnements dans ce jeu. Il apparaît comme une application. Quand le joueur ne donne pas ses commands, le jeu ne va pas bouger. Donc, au niveau de <<Game loop>>, ce jeu comporte très peu. Et l'importance de <<Game Loop>> est diminué au minimum. 
+
+On peut regarder le structure en réel sur le jeu <<Playboy-Spots>> dans le figure~\ref{fig:} : 
+
+Nous pouvons remarquer, nous n'avons pas de module <<AI>>, <<Physics>> etc. Il nous reste que <<Tester>>, <<Détection de collision>> et <<Sonore>>. Dans l'input, il est simple aussi, ce que nous attendons est le <<tap>> sur l'écran de l'iPhone. Dans l'étape de dessiner, nous dessinons les croix si joueur s'est trompé, ou un cercle si il a trouvé une différence.
+
+Nous n'avons pas besoins de mettre à jours cette cycle 60 fois par seconds. 
+
+Ce jeu comporte beaucoup des autre composant de genre d'application en dehors du jeu. C-à-dire la boutique, la notification, le scoring, twitter \& facebook etc..
+Je vais les parle dans le section suivante.
+
+% subsection le_structure_de_playboy_spots_ (end)
 
 % section structure (end)
 
