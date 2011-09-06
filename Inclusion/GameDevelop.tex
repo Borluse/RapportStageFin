@@ -281,7 +281,59 @@ Je vais les parle dans le section suivante.
 
 % subsection le_structure_de_playboy_spots_ (end)
 
+\subsection{Le structure des système} % (fold)
+
+<<Playboy-Spots>> comporte plusieurs composantes autour du jeu. La gros schéma suivante comme figure~\ref{fig:} va décrit la structure générale du <<Playboy-Spots>>.
+
+% TODO add strucuture de playboy-spots
+
+On peut remarquer que, il y a 7 composante en dehors du jeu. Il y a , shop, Options, Ranking, More Games, Notifications, Credits \& Social. Sauf le jeu, toute les autre composants sont crée par UIKit. Dans les autres composants, nous avons utilisé quand même beaucoup des bibliothèque pour faciliter notre travail, et pour obtenir un bon résultat.
+
+\begin{description}
+	\item[Shop] Shop est un UIView qui permet au joueur d'acheter les nouveaux packs, les bunnies et télécharger les nouveaux image. Y compris un fonction de <<CoverFlow>> pour améliorer l'affichage des packs.
+	\item[Options] C'est un layer devant le jeu, qui fournit des options pour permettre de activer et désactiver le musique et FX effect.
+	\item[Ranking] Un UIView qui permet de afficher toutes les scores local.
+	\item[More Games] Un web view qui se charge d'afficher un site web de chugulu qui proposer des autres jeux du chugulu games.
+	\item[Notification] Un système qui gène tous les notifications, afficher et supprimer.
+	\item[Crédit] Un view simple qui afficher le crédit de l'équipe de chugulu.
+	\item[Social] Un composant qui se charge de poster des scores, des phrases sur des site social comme twitter et facebook.
+\end{description}
+
+
+De l'autre coté, nous pouvons remarquer que nous avons 3 mode du qui sont Mode Suivival, Mode challenge et Mode zen.
+
+% subsection Le structure des système (end)
+
+
+\subsection{Synchronisation CS} % (fold)
+
+Le synchronisation de <<Playboy-Spots>> est important, parce que nous avons besoins de synchroniser notre scores avec le <<Game Center>> d'Apple, les status avec Twitter, facebook. Les informations debug avec Flurry. L'ads avec <<AdWhirl>>. Et surtout les images, les game stats, notification avec notre serveur.
+
+En présentant dans le figure~\ref{fig:} suivant, nous avons toutes les Data flow du <<Playboy-Spots>>.
+% TODO add Data Flow
+
+Les plus importants sont les synchronisation en rouge, qui supporte toute les fonctionnalités du jeu. On peut trouver les <<in-App pruchase>>, <<Push Notification>>, <<Scores>>, <<Image Download>> etc.
+Nous synchronisons nos informations en utilisant le format de Json. Par une bibliothèque <<Restkit>>. Qui est très facile pour encapsuler les donnée en json et envoyer, mapping un object dans un serveur  
+
+% subsection Synchronisation CS (end)
+
+\subsection{La base des données} % (fold)
+
+Le base des données est très important pour <<Playboy-Spots>>. Nous sauvegarder toutes les scores, les stats du jeu, les informations des joueur, même si les images. 
+Voici le schéma de la base des données que nous utilisons dans <<Playboy-Spots>>.
+
+% TODO add schéma de la base des donnée.
+
+% subsection  (end)
+
 % section structure (end)
+
+ % (fold)
+
+% section St (end)
+
+
+
 
 
 % chapter développement_d_un_jeu (end)
