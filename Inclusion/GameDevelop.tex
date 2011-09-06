@@ -11,9 +11,15 @@ Un jeu est un logiciel spéciale. Au niveau de ressource, un jeu est plus diffic
 \subsection{Processus Général} % (fold)
 \label{sub:processus_général}
 
-En générale, au niveau de programmation, le processus général n'est pas très loin que la processus classique d'un logiciel. Le processus peut être décomposé en plusieurs étape, qui sont présentés dans le schéma comme figure~\ref{fig:}.
+En générale, au niveau de programmation, le processus général n'est pas très loin que la processus classique d'un logiciel. Le processus peut être décomposé en plusieurs étape, qui sont présentés dans le schéma comme figure~\ref{fig:XMinds_Gamedevelopement}.
 
 % TODO add schéma générale
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=9in]{XMinds/Gamedevelopement.png}
+	\caption{caption}
+	\label{fig:XMinds_Gamedevelopement}
+\end{figure}
 
 Dans ce figure, on peut voir, généralement, un développement du jeu peut être divisé en les étapes suivantes :
 
@@ -103,6 +109,14 @@ Au niveau de processus, les types <<Edition>> est exactement pareil comme le pro
 
 % TODO add processus chugulu games
 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=9in]{XMinds/GamedevelopementChugulu.png}
+	\caption{caption}
+	\label{fig:XMinds_GamedevelopementChugulu}
+\end{figure}
+
+
 Sur ce schéma, nous pouvons savoir que, ce processus n'est pas très différente par rapport au processus général. En résumant les différences, elles sont principalement des étapes avec des drapeaux dessus. 
 
 \subsubsection{Negotiation with client } % (fold)
@@ -141,6 +155,14 @@ Test QA est utilisé souvent par chugulu games.
 
 % TODO  add équipe de chugulu
 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=9in]{XMinds/EquipeChuguluGames.png}
+	\caption{caption}
+	\label{fig:XMinds_EquipeChuguluGames}
+\end{figure}
+
+
 Chugulu games a deux poste du monde. Le poste principale est à Paris, qui se charge de développement, de communiquer avec clients et etc.. Le poste des état-unis ne se charge que maintenir et publier les jeux Edition de chugulu. Ici, je vais parler seulement de l'équipe à Paris, qui représente une structure générale et traditionnelle.
 
 Un jeu est un logiciel spéciale comme indiqué dans les chapitres précédente. Pour créer un jeu, il faut demander plusieurs ressource variée, il faut des spécialistes de différente sections travaillent ensemble. Un jeu a besoin de graphistes, de développeurs, de musiques créateurs, de commercial, de game désigner, de réalisateurs etc.. Cependant, un logiciel peut n'avoir besoins que des développeurs.  
@@ -161,13 +183,25 @@ Il est très important d'avoir communication parmi les 4 équipes. Souvent, c'es
 \subsection{Structure d'équipe mobile et les responsabilités} % (fold)
 \label{sub:structure_d_équipe_mobile_et_les_responsabilités}
 
-% TODO add schéma equipe mobile de chugulu
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6in]{XMinds/EquipeMobile.png}
+	\caption{caption}
+	\label{fig:XMinds_EquipeMobile}
+\end{figure}
+
 
 L'équipe mobile de chugulu games a comporte de un lead ios développeurs et 2 ios développeur stagiaires. L'équipe mobile de chugulu est quand même une équipe très jaune. Le lead iOS développeur est partagé par l'équipe mobile et l'équipe web. Moi et un autre stagiaires, nous somme les 2 autre développeurs. 
 
-Au niveau de responsabilités, le lead ios développeurs se charge de décider toute l'architecture du jeu, découpé les tâches, et assigner les tâches à nous. Sauf ci, il développe avec nous, communique avec le chef de projet, essayer de trouver des solutions pour les problèmes que nous rencontrons pendant les travails. Le processus chez chugulu peut être représenter par un schéma suivant:
+Au niveau de responsabilités, le lead ios développeurs se charge de décider toute l'architecture du jeu, découpé les tâches, et assigner les tâches à nous. Sauf ci, il développe avec nous, communique avec le chef de projet, essayer de trouver des solutions pour les problèmes que nous rencontrons pendant les travails. Le processus chez chugulu peut être représenter par un schéma suivant comme le Figure~\ref{fig:XMinds_ProcessusMobile}:
 
-% TODO add schéma processus.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=9in]{XMinds/ProcessusMobile.png}
+	\caption{caption}
+	\label{fig:XMinds_ProcessusMobile}
+\end{figure}
+
 
 À partir de ce schéma, nous pouvons remarquer que, nous avons 2 outils principaux. Un outil est l'outil pour manager les tâches. C'est ce que j'ai raconté précédente : Redmine ou Producteev. Un autre outil est l'outil pour contrôler les versions, ils sont : SVN, Git, et un site accompagne avec Git : github. 
 
@@ -188,7 +222,15 @@ Un jeu est un logiciel différente. Non seulement son fonctionnalité, son but, 
 
 Un jeu peut souvent bouger lui même sans l'activité des joueurs. C-à-d que, quand tu ne donne pas tes instructions, tes commands, le jeu peut bouger quand même. Il peut afficher une animation, il y a des objets qui bougent, le temps passé, des <<Civils>> se chats etc.. C'est parce que un jeu est dans quelque niveau un simulation d'un environnement. Un jeu toujours essaie de simuler un environnement vivant. Dedans, les joueurs peuvent avoir une impression que ils sont une membre qui appartient au environnement. Et ils peuvent avoir envie de interagir avec les objets, avec l'environnement, même si cet environnement n'est pas vrai. Tout cela est un facteur hyper importante pour un jeu qui veut être réussit.
 
-% TODO add the schema game loop 
+Le Figure~\ref{fig:XMinds_MainGameLoopAchitecture} represente ce structure générale
+
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6in]{XMinds/MainGameLoopAchitecture.png}
+	\caption{caption}
+	\label{fig:XMinds_MainGameLoopAchitecture}
+\end{figure}
 
 À partir de ce schéma <<Game loop>>, nous pouvons savoir, il y a 3 étape générale dans un game loop. Souvent, un jeu commence par étape <<Initialisation>>. Dans cette étape, le joueur va choisir les options, mode à jouer, etc. Une fois, le joueur clique sur <<Jouer>>, notre game loop commence à rouler. Souvent, un game loop commence par attendre l'input du joueur. Si un joueur n'input pas, game loop va aller dans l'étape 2, qui s'appelle <<Simuler game world>>. Dans cette étape, le jeu va essayer de simuler l'environnement du jeu par rapport aux inputs du joueurs. Ce simulations dépends sur les règles que nous avons donner. Précisément dire, nous pouvons avoir des règles comme <<Intellegent Artificiel>>, <<Collision detect>> etc.. Après cette étape, nous obtenons les résultats et l'environnement prêt à dessiner. C'est le moment où on dessiner les environnements dans l'écran devant le joueur.
 
@@ -270,7 +312,14 @@ Sonore sera spéciale que des autres phases du cycle de mise à jour. Il ne sera
 
 <<Playboy-Spots>> est un jeu un peu spécial. En fait, nous pouvons également considérer que <<Playboy-Spots>> est une application. La différence la plus évident par rapport aux autre jeux est que, il n'y pas beaucoup des animation, ni des environnements dans ce jeu. Il apparaît comme une application. Quand le joueur ne donne pas ses commands, le jeu ne va pas bouger. Donc, au niveau de <<Game loop>>, ce jeu comporte très peu. Et l'importance de <<Game Loop>> est diminué au minimum. 
 
-On peut regarder le structure en réel sur le jeu <<Playboy-Spots>> dans le figure~\ref{fig:} : 
+On peut regarder le structure en réel sur le jeu <<Playboy-Spots>> dans le figure~\ref{fig:XMinds_AchitecturePlayboy} :
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6in]{XMinds/AchitecturePlayboy.png}
+	\caption{caption}
+	\label{fig:XMinds_AchitecturePlayboy}
+\end{figure}
+ 
 
 Nous pouvons remarquer, nous n'avons pas de module <<AI>>, <<Physics>> etc. Il nous reste que <<Tester>>, <<Détection de collision>> et <<Sonore>>. Dans l'input, il est simple aussi, ce que nous attendons est le <<tap>> sur l'écran de l'iPhone. Dans l'étape de dessiner, nous dessinons les croix si joueur s'est trompé, ou un cercle si il a trouvé une différence.
 
@@ -283,9 +332,15 @@ Je vais les parle dans le section suivante.
 
 \subsection{Le structure des système} % (fold)
 
-<<Playboy-Spots>> comporte plusieurs composantes autour du jeu. La gros schéma suivante comme figure~\ref{fig:} va décrit la structure générale du <<Playboy-Spots>>.
+<<Playboy-Spots>> comporte plusieurs composantes autour du jeu. La gros schéma suivante comme figure~\ref{fig:XMinds_PlayboySpotsApp} va décrit la structure générale du <<Playboy-Spots>>.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6in]{XMinds/PlayboySpotsApp.png}
+	\caption{caption}
+	\label{fig:XMinds_PlayboySpotsApp}
+\end{figure}
 
-% TODO add strucuture de playboy-spots
+
 
 On peut remarquer que, il y a 7 composante en dehors du jeu. Il y a , shop, Options, Ranking, More Games, Notifications, Credits \& Social. Sauf le jeu, toute les autre composants sont crée par UIKit. Dans les autres composants, nous avons utilisé quand même beaucoup des bibliothèque pour faciliter notre travail, et pour obtenir un bon résultat.
 
@@ -300,7 +355,28 @@ On peut remarquer que, il y a 7 composante en dehors du jeu. Il y a , shop, Opti
 \end{description}
 
 
-De l'autre coté, nous pouvons remarquer que nous avons 3 mode du qui sont Mode Suivival, Mode challenge et Mode zen.
+De l'autre coté, nous pouvons remarquer que nous avons 3 mode du qui sont Mode Suivival, Mode challenge et Mode zen. En réalisant toutes les composant, nous avons choisi beaucoup des bibliothèque existant. Nous n'avons pas besoins de refaire des outils qui existe, la meilleurs façons est d'essayer de trouver ce qui existe, prend-le, changer-le pour adapter nos besoins.
+
+Le Figure~\ref{fig:XMinds_PlayboySpotsAppExternals} montre que les bibliothèques que nous avons utilisé dans <<Playboy-Spots>>. La plupart des bibliothèques sont gratuit est open-source. Nous avons quand-même une biliothèque interne, qui est utilisé par chugulu, qui est privé aussi. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=7in]{XMinds/PlayboySpotsAppExternals.png}
+	\caption{caption}
+	\label{fig:XMinds_PlayboySpotsAppExternals}
+\end{figure}
+
+\begin{description}
+	\item[Flurry] Une bibliothèque utilisé pour synchronisé les status des jeux avec un site web. Utilisé pour analysé les événement des joueurs. Quel heure, ce jeu est joué le plus.
+	\item[iCarousel] Une bibliothèque utilisé pour afficher toutes les packs comme cover view, qui est un effect utilisé par Apple, mais privé.
+	\item[AdWhirl] Une bibliothèque utilisé pour afficher les pubs
+	\item[Popover] Une bibliothèque utilisé pour afficher un popover sur iPhone. Le popover n'est fournit que sur iPad par Apple.
+	\item[cocos2d] Une bibliothèque trop connu du monde, utilisé pour créer des jeux en 2D sur iOS.
+	\item[RestKit] Une bibliothèque très connue du monde, utilisé pour gére les communication avec un serveur de style restful.
+	\item[Hellios] Une bibliothèque privé, n'utilisé que chez chugulu games
+	\item[MKStoreKit] Une bibliothèque pour faciliter acheter sur App Store. Elle est modifié beaucoup pour adapter chez chugulu.
+\end{description}
+
 
 % subsection Le structure des système (end)
 
@@ -309,8 +385,14 @@ De l'autre coté, nous pouvons remarquer que nous avons 3 mode du qui sont Mode 
 
 Le synchronisation de <<Playboy-Spots>> est important, parce que nous avons besoins de synchroniser notre scores avec le <<Game Center>> d'Apple, les status avec Twitter, facebook. Les informations debug avec Flurry. L'ads avec <<AdWhirl>>. Et surtout les images, les game stats, notification avec notre serveur.
 
-En présentant dans le figure~\ref{fig:} suivant, nous avons toutes les Data flow du <<Playboy-Spots>>.
-% TODO add Data Flow
+En présentant dans le figure~\ref{fig:XMinds_DataFlow} suivant, nous avons toutes les Data flow du <<Playboy-Spots>>.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=7in]{XMinds/DataFlow.png}
+	\caption{caption}
+	\label{fig:XMinds_DataFlow}
+\end{figure}
 
 Les plus importants sont les synchronisation en rouge, qui supporte toute les fonctionnalités du jeu. On peut trouver les <<in-App pruchase>>, <<Push Notification>>, <<Scores>>, <<Image Download>> etc.
 Nous synchronisons nos informations en utilisant le format de Json. Par une bibliothèque <<Restkit>>. Qui est très facile pour encapsuler les donnée en json et envoyer, mapping un object dans un serveur  
@@ -324,16 +406,86 @@ Voici le schéma de la base des données que nous utilisons dans <<Playboy-Spots
 
 % TODO add schéma de la base des donnée.
 
+
 % subsection  (end)
 
 % section structure (end)
 
- % (fold)
+\section{Test \& Amélioration} % (fold)
+\label{sec:test_&_amélioration}
 
-% section St (end)
+La phrase avant dernière est la phrase de <<Test\&Amélioration>>. Cette phrase est souvent très importante pour un jeu ou un logiciel. Cette phrase comporte 2 partie en parallèle, un est <<Test \& Debug>>, l'autre est <<Amélioration>>. La raison pour mettre test est amélioration dans une seule phrase, et les faire en parallèle, c'est parce que les 2 peut se effecter. Souvent, nous avons un bugue à corriger, en fait, ce bugue peut causer gros problème d'amélioration. En revanche, pour améliorer, nous devons changer quelque méthode, qui peut tomber bien sur notre bugue.
+
+\subsection{Debug} % (fold)
+\label{sub:debug}
+
+Le debug sur iPhone peut avoir des indices à suivi. 
+
+La première point, iPhone est un mobile. Même s'il y a simulateur de l'iPhone sur Mac OS, il n'est pas le même chose quand même. Quand nous avons rencontré un bug gras. Souvent, nous tester sur le simulateur et l'iPhone, ou autre i-Device, en faisant cela, nous pouvons augmenter notre chance à trouver ce problème. 
+
+La deuxième point, nous pouvons utiliser XCode pour tester. Comme les autre IDE, Xcode fournit la façon pour mettre un breakpoint, suivre la command un par un. XCode peut donner le suggestion sur le bug dans la pluspart des cas. Mais pas pour toutes les situations. Par exemple, si nous avons des threads, il est presque impossible de donner les bonnes informations par XCode. 
+
+La troisième point. Nous avons quand même un outil très important, qui s'appelle <<instruments>>. En utilisant cette outil, nous pouvons analyser notre jeu, regarder pourquoi nous avons beaucoup des mémoire consumer. Il est possible de trouver les problème de zombie par <<instruments>> aussi. Un problème de zombie est dit que, nous avons essayer d'accèser vers un objet qui est déjà releasé.
+
+La quatrième point. Après résoudre un debug, il faut tester en utilisant un device et le simulateur. 
+
+Pourquoi nous avons ces difficulté à trouver un bug, c'est à cause de :
+
+\begin{itemize}
+	\item Le simulateur a un mémoire infini. C'est beaucoup plus dur à produit un bug de mémoire trop chargé. Même s'il peut simuler le limit de mémoire. Mais une chose bizarre, en utilisant <<instruments>>, nous remarquons que, le simulateur ne fait pas pareil que le device. 
+	\item L'architecture de simulateur est i386. Mais l'architecture de device est Armv4, Armv6. Cela veut dire que, certaine bibliothèque ne peut être utilisée dans divice, mais fonctionne très bien sur simulateur.
+	\item Idem, certaine fonctionnalité ne peut être tester que sur device. Par exemple, la fonctionnalité d'app store. 
+	\item Le simulateur fonctionne très vite par rapport aux device. Peut-être un algorithem trop complexe peut fonctionne très bien sur simulateur, mais pas du tout sur device. 
+\end{itemize}
+
+% subsection debug (end)
+
+\subsection{Amélioration} % (fold)
+\label{sub:amélioration}
+
+Dans ce jeu, nous avons beaucoup de problème de fonctionnement. Nous avons mis beaucoup de temps pour améliorer notre jeu. Les améliorations comportes certaine topics comme suivantes:
+
+\begin{itemize}
+	\item Améliorer le problème de mémoire consumer. Dimunier la consumation des mémoire peut améliorer notre jeu. 
+	\item Utiliser des code spécial pour certaines chose importante.
+	\item Enlever les code inutile.
+	\item Essayer de mettre le code en multi-thread.
+	\item Cacher object qui est utilisé souvent.
+	\item ...
+\end{itemize}
+
+Je vais parler principalement sur <<Multi-thread>> et <<Sérialisation>>.
+
+\subsubsection{Multi-threading} % (fold)
+\label{ssub:multi_thread}
+
+La raison pour utiliser multi-threading, c'est pour libérer le main-thread. Si nous faisons trop de travaille dans le main-thread, il va bloquer notre applications. Parce que, le main-thread se charge d'interactiver avec le joueur. Cela veut dire que, si nous faisons trop charger le main-thread, il ne peut plus interactiver avec le joueur. 
+
+Le façon pour résoudre ce problème est essayer de créer des threads pour des tâches qui sont lourdre. Par exemple, les tâches pour charger une photo du disque dur à mémoire est une tâche lourdre. C'est souvent dans ce jeu, car chaque fois, le joueur a trouver toutes les différence, il faut remplacer les images par des nouveaux images. Pareil pour téléchargement, nous sauvegarder toutes les données sois dans la base des données, soit dans le disque dur. N'import quelle façon va prendre beaucoup de temps. Il faut que nous fasse plusieurs thread pour chaque tâche.
+
+Pour faire multi-thread dans l'application iPhone, nous pouvons utiliser la techniques fournit par Apple, qui s'appelle GCD, qui est abréviation de <<Grand Central Dispatch>>.
+
+% TODO add logo GCD
+
+Grand Central Dispatch est une technologie développée par Apple pour optimiser le support des processeurs multi-cœurs dans Mac OS X 10.6.
+Cette nouvelle architecture est conçue pour permettre aux développeurs d'utiliser le potentiel des processeurs multi-cœurs. Elle travaille en distribuant efficacement les processus aux différents cœurs.
+Le 11 septembre 2009, Apple a ouvert le code de Grand Central Dispatch aux contributeurs externes sous le nom de libdispatch1. Depuis, il a été annoncé que FreeBSD 8.1 prendra en charge libdispatch, ce qui laisse à penser que cette technologie pourrait être appliquée à d'autres environnements libres2.
 
 
+% subsubsection multi_thread (end)
 
+\subsubsection{Sérialisation} % (fold)
+\label{ssub:sérialisation}
 
+C'est une technique très utile. Comme pour beaucoup de choix algorithmiques, plus le mécanisme de sérialisation est spécialisé pour un type de données spécifique, plus il sera performant. Par exemple, si on ne veut transmettre que dix nombres dont les valeurs sont comprises entre 0 et 255, il suffira de 1 octet par nombre. Si par contre on ne sait pas à l'avance la quantité d'objets à transmettre on devra prévoir un ou plusieurs octets supplémentaires pour transmettre cette quantité. Si en plus ce ne sont pas seulement des nombres entiers, mais des objets quelconques que l'on souhaite transmettre, il faudra prévoir d'y associer les informations qui permettront de coder le type précis de chaque objet.
+
+Plus globalement, il est nécessaire de faire un a priori sur les ressources disponibles au moment de la désérialisation pour déterminer les informations que l'on pourra reconstruire à l'aide d'une simple référence et celles qu'il est nécessaire d'encoder. C'est par exemple le cas des polices de caractères dans un fichier PDF : selon que l'on souhaite privilégier l'exactitude du rendu sur toutes les machines ou la taille du fichier généré, il est possible de transmettre la définition complète du tracé des caractères ou de se contenter de transmettre le nom de la police et quelques autres caractéristiques de base, en laissant le soin aux machines cibles de rechercher la police la plus adaptée parmi celles dont elle dispose.
+
+Nous utilisons sérialisation pour nos images, en faisons cela, nous pouvons éviter de re construire les image de la base des données.
+% subsubsection sérialisation (end)
+
+% subsection amélioration (end)
+
+% section test_&_amélioration (end)
 
 % chapter développement_d_un_jeu (end)
