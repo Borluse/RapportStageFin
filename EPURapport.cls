@@ -1,9 +1,9 @@
-%% $Id: EPURapport.cls 31 2009-04-24 08:26:06Z 20404185t $
+%% $Id: EPURapport.cls 40 2010-04-02 06:46:36Z 20403346t $
 
 \NeedsTeXFormat{LaTeX2e}
 
 %----- Identification -----
-\ProvidesClass{EPURapport}[2009/04/24 - EPURapport document class]
+\ProvidesClass{EPURapport}[2009/09/16 - EPURapport document class]
 
 %----- Required Packages -----
 \RequirePackage{lmodern} %% A nice font
@@ -44,7 +44,7 @@
 \ifthenelse{\boolean{BUTF8}}{\RequirePackage[utf8]{inputenc}}{}
 
 %----- Initial Class -----
-\LoadClass[12pt,a4paper]{report}
+\LoadClass[11pt,a4paper]{report}
 \RequirePackage[francais]{babel}
 \RequirePackage{url}
 \RequirePackage{xcolor}
@@ -58,7 +58,7 @@
 \setlength{\evensidemargin}{2cm}
 \setlength{\oddsidemargin}{2cm}
 \setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-6.7cm} % 24cm
+\addtolength{\textheight}{-5.7cm} % 24cm
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-4cm} % 17cm
 \setlength{\topmargin}{0.5cm}
@@ -67,7 +67,7 @@
 \setlength{\voffset}{-2.54cm}
 \setlength{\hoffset}{-2.54cm}
 \setlength{\footskip}{1.5cm}
-%\linespread{2}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 %----- Personnal config -----
 \def\notableofcontents{%
@@ -224,6 +224,8 @@
 \newcommand{\annexes}{
 	\appendix
 	\renewcommand\chaptername{\appendixname}
+	\part*{Annexes}
+	\addcontentsline{toc}{part}{Annexes}
 }
 
 \def\schoolLogo{logos/Logo_Polytech_Tours}
@@ -247,6 +249,10 @@
 			\href{http://www.polytech.univ-tours.fr}{\texttt{www.polytech.univ-tours.fr}}
 		}
 
+		\bigskip
+		
+		\includegraphics[width=5cm]{Image/Chugulu-Games1.jpg}
+		
 		\bigskip
 
 		{\LARGE \textbf{\theLongGrade}
@@ -360,12 +366,14 @@
 		{\large\thedocumenttype}\\~\\
 	\end{center}
 
-	\paragraph*{R\'esum\'e :} \thefrenchabstract
-	\paragraph*{Mots clefs :} \thefrenchkeywords
-	\paragraph*{Abstract:} \theenglishabstract
-	\paragraph*{Keywords:} \theenglishkeywords
-	\vspace{1cm}
-	\hrule
+	\textbf{R\'esum\'e :} \thefrenchabstract
+
+	\textbf{Mots clefs :} \thefrenchkeywords
+
+	\textbf{Abstract:} \theenglishabstract
+
+	\textbf{Keywords:} \theenglishkeywords
+
 	\vfill
 	
 	\authorsAndSupervisorsDisplay
@@ -485,7 +493,7 @@
       \rlap{\vbox to\z@{\vss
 	  \vskip 3pc}
 	}\hskip\leftskip\fi
-     \Huge\textsf{#1}\par\semirule\vspace{1cm} \endgroup
+     \Huge \  #1\par\semirule\vspace{1cm} \endgroup
   \skip@34\p@ \advance\skip@-\normalbaselineskip
   \vskip\skip@ }
 
@@ -494,7 +502,7 @@
 \def\@makeschapterhead#1{%
   \begingroup
   \fontsize{\@xivpt}{18}\bfseries\centering
-  \Huge\textsf{#1}\par\semirule\vspace{1cm} \endgroup
+  \Huge#1\par\semirule\vspace{1cm} \endgroup
   \skip@34\p@ \advance\skip@-\normalbaselineskip
   \vskip\skip@ }
 
